@@ -76,5 +76,9 @@ A melody in a traditional sense, is not only a dimension of time, but also a dim
                [  4    3    2    1    0]))
     (all :part :leader)))
   ```
+  This short song consists here of three phrases played one after the other. Each phrase consisting of two equal length vectors (a clojure way of naming an array), first one representing the duration of the note event and the second one representing a position within a given scale (so transposing these patterns from major to minor becomes trivial as demonstrated here: https://github.com/ctford/leipzig). Were these vector pairs not of equal length, a mismatch would couse this pretty little song to sound something different.
+  
+  In a live coding, performing pre-composed music is almost impossible, and can be argued that goes against the idea of live coding (depending who you ask). So when designing an environment for live-algorithmic music, something has got to give away. Panaeolus was in this sense to be more rythmically oriented than melodically, as can be seen later, many ways exist to apply rythmical pattern to a given melodic pattern (or simply an array of frequencies within the sampling rate limit).
 
-####1. Installation
+#Panaeolus
+####1. Installation Mac
