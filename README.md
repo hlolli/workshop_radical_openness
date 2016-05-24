@@ -80,5 +80,21 @@ A melody in a traditional sense, is not only a dimension of time, but also a dim
   
   In a live coding, performing pre-composed music is almost impossible, and can be argued that goes against the idea of live coding (depending who you ask). So when designing an environment for live-algorithmic music, something has got to give away. Panaeolus was in this sense to be more rythmically oriented than melodically, as can be seen later, many ways exist to apply rythmical pattern to a given melodic pattern (or simply an array of frequencies within the sampling rate limit).
 
+#Lisp(Clojure)
+####Why lisp?
+Lisp is a family of programming langages dating back to the 1960's. Musicians have for long time used lisp because of its functional high-level programming. It would be my argument that Haskell is the alpha and omega of functional programming, as such, a very diffucult programming langage to tame. On the other hand, lisp is weird, but lisp is relatively easy. For musicians that want to focus on creating algorithms, patterns and music; language that is flexible, functional and extensible should be embraced. Supercollider/sclang is in comparison (to PD, Max and Csound) a rather functionalish programming language, which may explain it's popularity in the live-coding scene. To name a few of many programs using lisp:
+- Common Lisp Music https://ccrma.stanford.edu/software/clm/
+- Fluxus http://www.pawfal.org/fluxus/
+- Overtone http://overtone.github.io/
+- Alda http://alda.io/
+- Extempore http://extempore.moso.com.au/
+- CALMUS http://www.calmus.is/
+- Opusmodus http://opusmodus.com/
+These formentioned programs rely on various types of lisp, but for the remainder the focus will be set on Clojure.
+
+####Very basics (Clojure)
+
+
+
 #Panaeolus
 ####1. Installation Mac
