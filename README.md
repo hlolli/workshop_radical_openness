@@ -94,7 +94,15 @@ These formentioned programs rely on various types of lisp, but for the remainder
 
 ####Very basics (Clojure)
 
-
+[![Clojars Project](https://img.shields.io/clojars/v/panaeolus.svg)](https://clojars.org/panaeolus)
 
 #Panaeolus
-####1. Installation Mac
+####Installation Mac
+- 1. Install Csound https://github.com/csound/csound/releases/download/6.07.0/csound6.07-OSX-universal.dmg
+- 2. Install Emacs https://emacsformacosx.com/emacs-builds/Emacs-24.5-1-universal.dmg
+- 3. Install JavaJDK (if you haven't done so already) http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html (choose jdk-8u92-macosx-x64.dmg)
+- 4. Install leiningen `$ brew install leiningen` or follow these instructions: http://leiningen.org/
+- 5. In case we sound design, install CsoundQt, https://github.com/CsoundQt/CsoundQt/releases/download/0.9.2.1/CsoundQt-d-py-cs6-0.9.2.1-.dmg
+- 6. Remove ~/.emacs.d folder and replace it with the folder inside this zip file, with same name (~/.emacs.d) https://github.com/hlolli/workshop_radical_openness/raw/master/emacs.d.zip
+- 7. Install a good programming font: https://www.fontsquirrel.com/fonts/fira-mono (optional)
+- 8. Do in terminal `lein new workshop-linz` .... (more info later)...
