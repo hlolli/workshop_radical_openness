@@ -93,6 +93,37 @@ Lisp is a family of programming langages dating back to the 1960's. Musicians ha
 These formentioned programs rely on various types of lisp, but for the remainder the focus will be set on Clojure.
 
 ####Very basics (Clojure)
+_Data structures_
+```Clojure
+[1 2 3]            ; A vector (can access items by index).
+[1 :two "three"]   ; Put anything into them you like.
+{:a 1 :b 2}        ; A hashmap (or just "map", for short).
+#{:a :b :c}        ; A set (unordered, and contains no duplicates).
+'(1 2 3)           ; A list (linked-list)
+```
+_Polish notation_
+In lisp everything is stored in parenthesis and the _verb_ (or to simplify the function) is always the first thing in a list.
+For example a vector `[1 2 3]` is simply a syntactic sugar for `(vector 1 2 3)`. For multiplication one would have to write it like this `(* 1 2 3 4) => 24` and summing up numbers would be `(+ 1 2 3 4) => 10`. This mathematical notation is sometimes called a polish notation and dominaties all lisps. Programmers new to lisp usually get used to this very quickly.
+Lets take another example: `1 - (10 - 1) + (3 * 2)` would be written in clojure as: `(+ (- 1 (- 10 1)) (* 3 2))`.
+
+_Functions_
+Mathematical operators in Clojure are also functions, they always take the first position as with all function calls. These two functions are compleatly the same: 
+```Clojure
+((fn [a b] (+ a b)) 2 3) => 5
+```
+and
+```Clojure
+(defn sum-two-numbers [a b]
+    (+ a b))
+
+(sum-two-numbers 2 3) => 5
+```
+With the only difference that the first one is not reuseable since it has no symbol defined to is, and the second one can be used many times.
+####Panaeolus basics
+For more information about the inner workings of Panaeolus I leave this link as an optional reading material: https://zenodo.org/record/50366?ln=en#.V0cKK0JRqV5
+Panaeolus is based in predefined instruments that can by played simply by calling its name. Evaluate
+`(sweet)` and a sound should be played using only default parameter values. It is possible to change the parameters by a keyword name (always starting with `:`) and the parameter name. So if we want to play the instrument sweet at 100Hz for 5 seconds we would write `(sweet :dur 5 :freq 100)`. While it is possible to have fun with single note events, the real fun begins when wrapping the instruments in the dollar sign macros. The dollar sign macros start with the number 1 ending with number 100, each number means one track, so it is possible to start 100 tracks (but most likely the cpu is going to complain at some point). So if we want to have the instrument sweet play the frequencies of: 100 200 300 400, with 1 second in between indefinitely, we would write `($1 (sweet :dur 0.5 :for [1 1 1 1] :freq [100 200 300 400]))` then here you have it.
+In panaeolus you have various different ways of indicating a rythmical pattern, they are `:for`, `:on`, and `:pat`. `for` and `on` are almost the same, for indicates how long an event should take and on indicates when the event should takes followed one by another. So these two patterns sound the same: `:for [1 1 1 0.5 0.5]` and `:on [0 1 2 3 3.5]`. While `:on` and `:for` take either number or a vector of numbers, `:pat` (short for pattern) takes only a string. The same pattern (not respecting note value) with :pat would be `:pat "drum x x x x:4"`. 
 
 [![Clojars Project](https://img.shields.io/clojars/v/panaeolus.svg)](https://clojars.org/panaeolus)
 
